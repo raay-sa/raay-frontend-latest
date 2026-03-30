@@ -401,15 +401,16 @@ export default function RegisterPage() {
             show={showConfirm} onToggle={() => setShowConfirm(!showConfirm)}
             value={form.confirm} onChange={handleChange} />
 
+          {/* Could not find captcha verification route on backend, so disabled it temporarily */}
           {/* Google reCAPTCHA */}
-          <GoogleCaptcha
+          {/* <GoogleCaptcha
             ref={captchaRef}
             onVerify={handleCaptchaVerify}
             onExpire={handleCaptchaExpire}
             onError={handleCaptchaError}
             error={captchaError}
             className="flex justify-center"
-          />
+          /> */}
 
           {/* Terms */}
           <label className="inline-flex items-center text-sm">
