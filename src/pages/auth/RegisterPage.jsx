@@ -192,12 +192,13 @@ export default function RegisterPage() {
       return;
     }
 
+    // TODO: Uncomment this when captcha is implemented on backend
     // Validate captcha
-    if (!captchaToken) {
-      setCaptchaError('يجب إكمال التحقق من أنك لست روبوت.');
-      toast.error('يجب إكمال التحقق من أنك لست روبوت.');
-      return;
-    }
+    // if (!captchaToken) {
+    //   setCaptchaError('يجب إكمال التحقق من أنك لست روبوت.');
+    //   toast.error('يجب إكمال التحقق من أنك لست روبوت.');
+    //   return;
+    // }
 
     // Validate password strength
     if (!passwordStrength.isValid) {
