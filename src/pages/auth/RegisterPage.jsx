@@ -346,7 +346,7 @@ export default function RegisterPage() {
             <Radio label="متدرب" value="student"
               checked={accountType === 'student'}
               onChange={() => setAccountType('student')} />
-            <Radio label="خبير" value="teacher"
+            <Radio label="مدرب" value="trainer"
               checked={accountType === 'teacher'}
               onChange={() => setAccountType('teacher')} />
           </div>
@@ -359,7 +359,7 @@ export default function RegisterPage() {
           )}
 
           {/* Teacher-only fields */}
-          {accountType === 'teacher' && (
+          {(accountType === 'teacher') && (
             <>
               <Input icon={DocumentIcon} label="التخصص" name="specialization"
                 value={form.specialization} onChange={handleChange}

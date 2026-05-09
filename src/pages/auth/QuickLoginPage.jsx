@@ -41,21 +41,25 @@ export default function QuickLoginPage() {
         toast.success('تم تسجيل الدخول بنجاح');
         
         // Redirect based on user type
-        const redirectPath = {
+        const roleRedirectMap = {
           admin: '/admin',
           teacher: '/teacher',
           student: '/student',
           trainee: '/student'
-        }[authData.user.type] || '/student';
+        }
+
+        const redirectPath = roleRedirectMap[authData.user.type] || '/student';
         
         navigate(redirectPath);
       } else {
         throw new Error('فشل في تسجيل الدخول');
       }
     } catch (err) {
-      const errorMessage = err?.response?.data?.message || 
-                          err?.message || 
-                          'حدث خطأ أثناء تسجيل الدخول';
+      const errorMessage =  err?.response?.data?.errors?.email?.[0] ||
+                            err?.response?.data?.errors?.password?.[0] ||
+                            err?.response?.data?.message || 
+                            err?.message || 
+                           'حدث خطأ أثناء تسجيل الدخول';
       setError(errorMessage);
       toast.error(errorMessage);
     } finally {
