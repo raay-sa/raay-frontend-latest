@@ -134,8 +134,9 @@ export default function CategoryCreate() {
                     )}
                 </div>
 
+                {/* This might be temporary */}
                 <div>
-                    <label className="block font-medium mb-2">الصورة العربية (اختياري)</label>
+                    <label className="block font-medium mb-2">صورة (اختياري)</label>
                     {previewAr && (
                         <img src={previewAr} alt="preview ar" className="w-28 h-28 object-cover rounded mb-3" />
                     )}
@@ -150,7 +151,25 @@ export default function CategoryCreate() {
                     )}
                 </div>
 
-                <div>
+                {/* This might be temporary */}
+                {/* <div>
+                    <label className="block font-medium mb-2">الصورة العربية (اختياري)</label>
+                    {previewAr && (
+                        <img src={previewAr} alt="preview ar" className="w-28 h-28 object-cover rounded mb-3" />
+                    )}
+                    <input
+                        type="file"
+                        accept="image/*"
+                        onChange={handleChooseImageAr}
+                        className={`${imageArHasError ? "border border-red-500 rounded" : ""}`}
+                    />
+                    {imageArHasError && (
+                        <p className="text-red-600 text-sm mt-1">{fieldErrors.image_ar[0]}</p>
+                    )}
+                </div> */}
+
+                {/* This might be temporary */}
+                {/* <div>
                     <label className="block font-medium mb-2">الصورة الإنجليزية (اختياري)</label>
                     {previewEn && (
                         <img src={previewEn} alt="preview en" className="w-28 h-28 object-cover rounded mb-3" />
@@ -164,7 +183,7 @@ export default function CategoryCreate() {
                     {imageEnHasError && (
                         <p className="text-red-600 text-sm mt-1">{fieldErrors.image_en[0]}</p>
                     )}
-                </div>
+                </div> */}
 
                 <div className="flex gap-3">
                     <button
