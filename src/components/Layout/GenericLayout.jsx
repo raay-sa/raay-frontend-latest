@@ -282,7 +282,7 @@ export default function GenericLayout({ navItems }) {
                     {/* Desktop Logo */}
                     <div className="hidden lg:flex justify-center mb-6">
                         <a 
-                            href="https://raay.sa/" 
+                            href={import.meta.env.VITE_WEBSITE_LINK}
                             target="_blank" 
                             rel="noopener noreferrer"
                             className="cursor-pointer"
