@@ -1,6 +1,6 @@
 export default {
   // auth
-  LOGIN: `${import.meta.env.VITE_MAIN_LOGIN_ROUTE}`,
+  LOGIN: `/login`,
   REGISTER: "/register",
   LOGOUT: "/logout",
 

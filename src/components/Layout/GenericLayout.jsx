@@ -260,7 +260,7 @@ export default function GenericLayout({ navItems }) {
                     {/* Mobile close button */}
                     <div className="flex justify-between items-center mb-6 lg:hidden">
                         <a 
-                            href="https://raay.sa/" 
+                            href={import.meta.env.VITE_WEBSITE_LINK} 
                             target="_blank" 
                             rel="noopener noreferrer"
                             className="cursor-pointer"
