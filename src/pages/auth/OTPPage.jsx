@@ -20,7 +20,7 @@ export default function OTPPage() {
 
   // redirect if missing context
   useEffect(() => {
-    if (!phone) navigate('/login', { replace: true });
+    if (!phone) navigate(`${import.meta.env.VITE_MAIN_LOGIN_ROUTE}`, { replace: true });
   }, [phone, navigate]);
 
   useEffect(() => {

@@ -149,7 +149,7 @@ export default function App() {
       {/* Pusher-based notifications: subscribes per role & user id */}
       <PushNotificationsProvider>
         <Routes>
-          <Route path="/" element={<Navigate to="/login" replace />} />
+          <Route path="/" element={<Navigate to={import.meta.env.VITE_MAIN_LOGIN_ROUTE} replace />} />
 
           {/* Auth routes */}
           <Route path="login" element={<LoginPage />} />

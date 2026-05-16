@@ -82,7 +82,8 @@ export default function GenericLayout({ navItems }) {
     const confirmLogout = async () => {
         setShowLogoutModal(false);
         await logout();
-        navigate('/login');
+        navigate(import.meta.env.VITE_MAIN_LOGIN_ROUTE)
+        // navigate('/login');
     };
 
     /* ==========================

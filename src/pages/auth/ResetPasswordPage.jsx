@@ -136,7 +136,7 @@ export default function ResetPasswordPage() {
       sessionStorage.removeItem('resetPasswordPhone');
       toast.success('تم تحديث كلمة المرور بنجاح');
       // Redirect to login page
-      navigate('/login', { replace: true });
+      navigate(`${import.meta.env.VITE_MAIN_LOGIN_ROUTE}`, { replace: true });
     } catch (err) {
       const errorMessage = err?.response?.data?.message || 
                           err?.response?.data?.errors?.password?.[0] ||

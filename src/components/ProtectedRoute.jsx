@@ -10,10 +10,13 @@ export default function ProtectedRoute({ allowedRoles }) {
     if (loading) return <PageSkeleton />; // or: return null
 
     // 2) No token at all => unauthenticated
-    if (!token) return <Navigate to="/login" replace />;
+    // if (!token) return <Navigate to="/login" replace />;
+    if (!user) return <Navigate to={import.meta.env.VITE_MAIN_LOGIN_ROUTE} replace />;
 
     // 3) Token exists but user still null (rare, but defensive)
-    if (!user) return <Navigate to="/login" replace />;
+    // if (!user) return <Navigate to="/login" replace />;
+    if (!user) return <Navigate to={import.meta.env.VITE_MAIN_LOGIN_ROUTE} replace />;
+
 
     // 4) Role guard: if allowedRoles is provided and user.type is NOT in it -> bounce to their own dashboard
     if (allowedRoles && !allowedRoles.includes(user.type)) {

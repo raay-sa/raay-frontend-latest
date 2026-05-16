@@ -419,7 +419,7 @@ export default function RegisterPage() {
               onChange={e => setAgree(e.target.checked)}
               className="form-checkbox h-4 w-4 text-primary" />
             <span className="mr-2 text-gray-700">
-              أوافق على&nbsp;<a href="/terms" className="text-primary underline">الشروط والأحكام</a>
+              أوافق على&nbsp;<a href={`${import.meta.env.VITE_WEBSITE_LINK}terms`} className="text-primary underline">الشروط والأحكام</a>
               &nbsp;وسياسة الخصوصية
             </span>
           </label>
@@ -430,7 +430,7 @@ export default function RegisterPage() {
 
           <p className="text-center text-xs lg:text-sm mt-4">
             لديك حساب بالفعل؟&nbsp;
-            <a href="/login" className="text-primary underline">تسجيل الدخول</a>
+            <a href={`${import.meta.env.VITE_MAIN_LOGIN_ROUTE}` || '/login'} className="text-primary underline">تسجيل الدخول</a>
           </p>
         </form>
       </div>
@@ -446,7 +446,7 @@ export default function RegisterPage() {
               سنقوم بإشعارك فور الموافقة.
             </p>
             <button
-              onClick={() => { setUnderReviewOpen(false); navigate('/login', { replace: true }); }}
+              onClick={() => { setUnderReviewOpen(false); navigate(`${import.meta.env.VITE_MAIN_LOGIN_ROUTE} || login`, { replace: true }); }}
               className="mt-2 w-full py-3 lg:py-2 bg-primary text-white rounded-lg text-sm lg:text-base"
             >
               العودة لتسجيل الدخول

@@ -12,7 +12,7 @@ export default function SuccessPage() {
   const subtitle = isVerify ? "يمكنك الآن الاستمتاع بجميع خدماتنا" : "";
   const btnText = isVerify ? "متابعة" : "تسجيل الدخول";
   const btnAction = () => {
-    navigate(isVerify ? "/dashboard" : "/login");
+    navigate(isVerify ? "/dashboard" : `${import.meta.env.VITE_MAIN_LOGIN_ROUTE}`);
   };
 
   return (

@@ -95,7 +95,7 @@ http.interceptors.response.use(
           localStorage.removeItem("token");
           localStorage.removeItem("refresh_token");
           localStorage.removeItem("type");
-          window.location = "/login";
+          window.location = `${import.meta.env.VITE_MAIN_LOGIN_ROUTE}`;
           return Promise.reject(refreshError);
         } finally {
           isRefreshing = false;
@@ -106,7 +106,7 @@ http.interceptors.response.use(
         localStorage.removeItem("token");
         localStorage.removeItem("refresh_token");
         localStorage.removeItem("type");
-        window.location = "/login";
+        window.location = `${import.meta.env.VITE_MAIN_LOGIN_ROUTE}`;
       }
     }
 

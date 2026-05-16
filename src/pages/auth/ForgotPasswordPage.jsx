@@ -66,7 +66,7 @@ export default function ForgotPasswordPage() {
 
           <p className="text-xs lg:text-sm text-center">
             تذكرت كلمة المرور؟{" "}
-            <a href="/login" className="text-primary hover:underline">
+            <a href={import.meta.env.VITE_MAIN_LOGIN_ROUTE} className="text-primary hover:underline">
               تسجيل الدخول
             </a>
           </p>
