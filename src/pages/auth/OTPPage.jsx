@@ -20,7 +20,9 @@ export default function OTPPage() {
 
   // redirect if missing context
   useEffect(() => {
-    if (!phone) navigate(`${import.meta.env.VITE_MAIN_LOGIN_ROUTE}`, { replace: true });
+    // Values needed to hardcoded here
+    // if (!phone) navigate(`${import.meta.env.VITE_MAIN_LOGIN_ROUTE}`, { replace: true });
+    if (!phone) navigate("/login", { replace: true });
   }, [phone, navigate]);
 
   useEffect(() => {
@@ -119,7 +121,15 @@ export default function OTPPage() {
         setError('تم التحقق لكن لم نستلم بيانات الدخول. تواصل مع الدعم.');
       }
     } catch (err) {
-      setError(err?.response?.data?.message || 'رمز غير صالح');
+      const errorMessage =  err?.response?.data?.errors?.auth_method?.[0] ||
+                            err?.response?.data?.errors?.phone?.[0] ||
+                            err?.response?.data?.errors?.code?.[0] || 
+                            err?.message || 
+                            'رمز غير صالح';
+                              console.log("err?.response?.data?.message", err?.response?.data?.message)
+                              console.log("err?.message", err?.message)
+      // setError(err?.response?.data?.message || 'رمز غير صالح');
+      setError(errorMessage || 'رمز غير صالح');
     } finally {
       setLoad(false);
     }
