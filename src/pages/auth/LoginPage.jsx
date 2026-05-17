@@ -24,7 +24,13 @@ export default function LoginPage() {
       setOtpSession({ phone, method: 'login' });
       navigate('/otp');
     } catch (err) {
-      setError(err?.response?.data?.message || 'تعذّر إرسال رمز التحقق');
+      const errorMessage =  err?.response?.data?.errors?.auth_method?.[0] ||
+      err?.response?.data?.phone?.password?.[0] ||
+      err?.response?.data?.message || 
+      err?.message || 
+     'تعذّر إرسال رمز التحقق';
+      // setError(err?.response?.data?.message || 'تعذّر إرسال رمز التحقق');
+      setError(errorMessage)
     } finally {
       setLoad(false);
     }
